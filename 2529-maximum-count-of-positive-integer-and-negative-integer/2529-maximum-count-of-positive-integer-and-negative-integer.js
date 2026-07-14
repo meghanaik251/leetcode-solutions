@@ -1,33 +1,17 @@
+//without binary search
+
+
 var maximumCount = function(nums) {
-  let left = 0;
-  let right = nums.length;
+    let positive = 0;
+    let negative = 0;
 
-  while (left < right) {
-    const mid = Math.floor((left + right) / 2);
-
-    if (nums[mid] < 0) {
-      left = mid + 1;
-    } else {
-      right = mid;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > 0) {
+            positive++;
+        } else if (nums[i] < 0) {
+            negative++;
+        }
     }
-  }
 
-  const negativeCount = left;
-
-  left = 0;
-  right = nums.length;
-
-  while (left < right) {
-    const mid = Math.floor((left + right) / 2);
-
-    if (nums[mid] <= 0) {
-      left = mid + 1;
-    } else {
-      right = mid;
-    }
-  }
-
-  const positiveCount = nums.length - left;
-
-  return Math.max(negativeCount, positiveCount);
+    return Math.max(positive, negative);
 };
