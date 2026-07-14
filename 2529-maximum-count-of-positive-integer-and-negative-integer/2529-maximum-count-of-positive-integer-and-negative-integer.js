@@ -2,7 +2,6 @@ var maximumCount = function(nums) {
   let left = 0;
   let right = nums.length;
 
-  // Find the first element greater than or equal to 0
   while (left < right) {
     const mid = Math.floor((left + right) / 2);
 
@@ -18,7 +17,6 @@ var maximumCount = function(nums) {
   left = 0;
   right = nums.length;
 
-  // Find the first element greater than 0
   while (left < right) {
     const mid = Math.floor((left + right) / 2);
 
